@@ -103,4 +103,25 @@ footer {
   box-sizing: border-box;
 }
 
+.testimonial {
+  background-color: #f8f8ff;
+  border-left: 5px solid #1a73e8;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #444;
+  border-radius: 6px;
+}
+
+.testimonial h2 {
+  margin-top: 0;
+  color: #1a73e8;
+}
+
+.testimonial strong {
+  color: #222;
+}
+
+
 
