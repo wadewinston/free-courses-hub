@@ -1,13 +1,15 @@
+/* Layout Base */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   display: flex;
   min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fdfdfd;
   color: #333;
   line-height: 1.6;
 }
 
+/* Sidebar Styles */
 .sidebar {
   width: 220px;
   background-color: #f4f4f4;
@@ -41,12 +43,14 @@ body {
   text-decoration: underline;
 }
 
+/* Main content styling */
 .main-content {
   flex: 1;
   padding: 40px;
   box-sizing: border-box;
 }
 
+/* Typography and Elements */
 h1 {
   font-size: 2.2em;
   color: #1a73e8;
@@ -84,3 +88,4 @@ footer {
   border-top: 1px solid #ddd;
   padding-top: 1em;
 }
+
