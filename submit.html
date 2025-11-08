@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit a Free Course | Free Courses Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>📚 Categories</h2>
+      <ul>
+        <li><a href="index.html">🏠 Homepage</a></li>
+        <li><a href="tecnologia.html">💻 Technology</a></li>
+        <li><a href="negocios.html">📈 Business</a></li>
+        <li><a href="idiomas.html">🗣️ Languages</a></li>
+        <li><a href="saude.html">❤️ Health (coming soon)</a></li>
+        <li><a href="submit.html"><strong>📬 Submit a Course</strong></a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h1>📬 Submit a Free Course</h1>
+      <p>Know a great free course we missed? Submit it below and we’ll review it!</p>
+
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Your Name (optional):</label><br>
+        <input type="text" id="name" name="name" placeholder="John Doe"><br><br>
+
+        <label for="email">Your Email (optional):</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com"><br><br>
+
+        <label for="course">Course Title:</label><br>
+        <input type="text" id="course" name="course" required><br><br>
+
+        <label for="link">Course URL:</label><br>
+        <input type="url" id="link" name="link" required><br><br>
+
+        <label for="category">Suggested Category:</label><br>
+        <select id="category" name="category" required>
+          <option value="">-- Select --</option>
+          <option value="Technology">Technology</option>
+          <option value="Business">Business</option>
+          <option value="Languages">Languages</option>
+          <option value="Health">Health</option>
+          <option value="Other">Other</option>
+        </select><br><br>
+
+        <label for="notes">Why is this course valuable? (Optional)</label><br>
+        <textarea id="notes" name="notes" rows="4" placeholder="Optional note..."></textarea><br><br>
+
+        <button type="submit">🚀 Submit Course</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
