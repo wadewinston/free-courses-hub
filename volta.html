@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Volta | Smart Course Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .volta-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5ff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 { text-align: center; color: #333; }
+    label, select, input { display: block; margin-top: 15px; }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #4c4cff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 30px;
+      background: #e9ffe9;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="volta-container">
+    <h1>🤖 Meet Volta</h1>
+    <p>Answer a few quick questions so Volta can match you with the perfect course!</p>
+
+    <form id="voltaForm">
+      <label>Your current skill level:</label>
+      <select name="level">
+        <option value="beginner">🔰 Beginner</option>
+        <option value="intermediate">⚙️ Intermediate</option>
+        <option value="advanced">🚀 Advanced</option>
+      </select>
+
+      <label>What topics are you most interested in?</label>
+      <input type="text" name="topics" placeholder="e.g., AI, Python, Marketing">
+
+      <label>How much time can you commit per week?</label>
+      <select name="time">
+        <option value="1-3">⏱ 1–3 hours</option>
+        <option value="4-7">⏰ 4–7 hours</option>
+        <option value="8+">🧠 8+ hours</option>
+      </select>
+
+      <label>Preferred language:</label>
+      <select name="language">
+        <option value="english">🇬🇧 English</option>
+        <option value="portuguese">🇵🇹 Portuguese</option>
+      </select>
+
+      <label>Do you want certification?</label>
+      <select name="certified">
+        <option value="yes">✅ Yes</option>
+        <option value="no">❌ No</option>
+        <option value="optional">🤷 Optional</option>
+      </select>
+
+      <label>What's your main goal?</label>
+      <input type="text" name="goal" placeholder="(Optional) e.g., Get a job, learn for fun, switch careers">
+
+      <button type="submit">Find My Courses</button>
+    </form>
+
+    <div class="result" id="resultBox">
+      <strong>✨ Volta recommends:</strong>
+      <p id="resultText">[Your tailored course picks will appear here...]</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('voltaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const level = data.get('level');
+      const topics = data.get('topics');
+      const time = data.get('time');
+      const lang = data.get('language');
+      const certified = data.get('certified');
+      const goal = data.get('goal');
+
+      let message = `🎯 You're a ${level} interested in ${topics}. `;
+      message += `You can commit ${time} hours/week, prefer content in ${lang}, `;
+      message += `${certified === 'yes' ? "want certification" : certified === 'no' ? "don't need certification" : "certification is optional"}. `;
+      if (goal) message += `Your goal is: ${goal}.`;
+
+      document.getElementById('resultText').innerText = message;
+      document.getElementById('resultBox').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
